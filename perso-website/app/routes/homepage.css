@@ -1,111 +1,89 @@
-@font-face {
-    font-family: 'Swiza';
-    src: url('/fonts/swiza-medium-webfont.eot');
-    src: url('/fonts/swiza-medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/swiza-medium-webfont.woff') format('woff'), 
-         url('/fonts/swiza-medium-webfont.woff2') format('woff2'),
-         url('/fonts/swiza-medium-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-
 .homepage {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    min-height: 100vh;
-    background-color: #dcef9d; 
-    padding: 20px;
-    margin: 0;
-    transition: filter 0.3s ease-in-out;
-    will-change: filter;
-  }
-
-  .homepage.blurred {
-    filter: blur(5px);
-    pointer-events: none;
-    user-select: none; 
-  }
-
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    z-index: 999;
-    cursor: pointer;
-  }
-  
-
-.words-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px; 
-}
-
-.interactive-word {
-    cursor: pointer; 
-    line-height: 0.8 !important;
-}
-  
-.large-text {
-  font-size: 7em;
-  margin: 0 0.5rem;
-  cursor: pointer;
-  font-family: Swiza,sans-serif;
-  color: #232e21;
-  white-space: pre-wrap;
-  transition: color 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 2.5rem;
+  margin: 0;
+  max-width: 600px;
 }
 
 @media (max-width: 600px) {
-  .large-text {
-    font-size: clamp(1.5rem, 8vw, 2.2rem); /* fixes shitty thin mobile screens */
+  .homepage {
+    padding: 1.5rem;
   }
 }
-.large-text:hover {
-  color: #E75A7C;
+
+.homepage-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.homepage-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 2.5rem;
+}
+
+.homepage-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.homepage-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.15s ease;
   cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.homepage-link:hover {
+  color: #555;
+}
+
+.back-button {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.back-button:hover {
+  color: #1a1a1a;
 }
 
 .app-container {
-    position: relative;
-    min-height: 100vh;
-  }
-
-  .projects-modal {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 80%;
-    background-color: white;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(100%);
-    transition: transform 0.5s ease-in-out;
-    will-change: transform;
-    visibility: hidden;
+  min-height: 100vh;
 }
 
-.projects-modal.open {
-    transform: translateY(0);
-    visibility: visible;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  cursor: pointer;
 }
-
-.credits-modal.open {
-  transform: translateY(0);
-  visibility: visible;
-}
-
-.modal-content {
-    font-size: 2em;
-    color: black;
-    text-align: center;
-  }
-  
-

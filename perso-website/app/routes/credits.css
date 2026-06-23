@@ -1,84 +1,52 @@
 /**
-  * credits.css
-  * 
-  * Attention, ce fichier est utilisé pour le modal des crédits, des mentions légales et de Contact.
-  */
-
-@font-face {
-  font-family: 'Absans';
-  src: url('/fonts/Absans-Regular.woff') format('woff'),
-       url('/fonts/Absans-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Swiza';
-  src: url('/fonts/swiza-medium-webfont.eot');
-  src: url('/fonts/swiza-medium-webfont.eot?#iefix') format('embedded-opentype'),
-       url('/fonts/swiza-medium-webfont.woff') format('woff'),
-       url('/fonts/swiza-medium-webfont.woff2') format('woff2'),
-       url('/fonts/swiza-medium-webfont.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+ * credits.css
+ * 
+ * Shared styles for Credits, Legal, and Contact modals.
+ */
 
 .credits-modal {
   position: fixed;
   left: 0;
-  bottom: -100%;
-  width: 100%;
-  height: 80%; /* Ajustez la hauteur pour correspondre à celle de projets */
-  background-color: #e7f1c3;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 1010;
-  transition: bottom 0.3s ease-in-out;
-  overflow-y: auto;
-  display: flex; /* Ajouté pour aligner le contenu */
-  flex-direction: column; /* Ajouté pour aligner le contenu */
-}
-
-.credits-modal.open {
   bottom: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 1000;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
 }
 
 .credits-modal-content {
-  padding: 20px;
+  max-width: 600px;
+  width: 100%;
 }
-
-.absans-font {
-  font-family: 'Absans', sans-serif;
-}
-
-.swiza-font {
-  font-family: 'Swiza', sans-serif;
-}
-
 
 .credits-title {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #333; 
-  font-family: 'Absans', sans-serif; 
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
 }
 
 .fonts-credits {
-  background-color: #eff5da; /* Couleur de fond des projets */
-  border-radius: 10px; /* Bordures arrondies des projets */
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère des projets */
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .fonts-credits h2 {
-  font-size: 1.8em;
-  margin-top: 0; 
-  margin-bottom: 15px;
-  color: #333;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #e0e0e0;
-  font-family: 'Absans', sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+  margin-bottom: 0.5rem;
 }
 
 .fonts-credits ul {
@@ -87,24 +55,29 @@
 }
 
 .fonts-credits li {
-  margin-bottom: 15px;
-  font-family: 'Absans', sans-serif; /* Police du texte courant des projets */
-  color: #555; /* Couleur du texte courant des projets */
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
-.fonts-credits strong {
-  font-weight: bold;
-  font-size: 1.1em;
-  display: block;
-  margin-bottom: 5px;
-  color: #333; /* Couleur du texte important des projets */
+.fonts-credits p {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  line-height: 1.7;
+  font-size: 0.95rem;
 }
 
-.fonts-credits a {
-  color: #007bff; /* Couleur des liens, un bleu standard */
-  text-decoration: none;
+.absans-font {
+  font-family: 'Inter', sans-serif;
 }
 
-.fonts-credits a:hover {
-  text-decoration: underline;
+.swiza-font {
+  font-family: 'Inter', sans-serif;
+}
+
+@media (max-width: 600px) {
+  .credits-modal {
+    padding: 2rem 1.2rem;
+  }
 }

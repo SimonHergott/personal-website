@@ -29,6 +29,9 @@ export default function ParapluieFound() {
   return (
     <div className="kindle-found-container">
       <div className="kindle-found-content">
+        <div className="kindle-back-row">
+          <button className="back-button" onClick={() => window.location.href = '/'}>← Back</button>
+        </div>
         <div className="image-wrapper">
           <img src={IMAGE_URL} alt="Found umbrella" className="kindle-found-image" />
         </div>
